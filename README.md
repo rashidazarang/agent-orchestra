@@ -455,6 +455,6 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 ---
 
-**Built with ❤️ by the Open Source Community**
+**Built with ❤️ by Rashid Azarang**
 
 *Making multi-agent orchestration accessible to everyone*
