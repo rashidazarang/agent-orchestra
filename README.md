@@ -1,46 +1,36 @@
-# 🎭 Agent Orchestra v2.0
+# Agent Orchestra
 
-> **The Ultimate Multi-Protocol Orchestration Platform**
+> Multi-Protocol Orchestration Framework for Enterprise Integration
 
 [![Version](https://img.shields.io/badge/Version-2.0.0-brightgreen)](https://github.com/rashidazarang/agent-orchestra)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![MCP Compatible](https://img.shields.io/badge/MCP-Integrated-blue)](https://modelcontextprotocol.io/)
-[![Multi-Protocol](https://img.shields.io/badge/Protocols-6+-orange)]()
+[![MCP Compatible](https://img.shields.io/badge/MCP-Native-blue)](https://modelcontextprotocol.io/)
+[![Protocols](https://img.shields.io/badge/Protocols-6-orange)]()
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
-[![Domain Ready](https://img.shields.io/badge/Domains-Extensible-purple)]()
 
-## 🚀 What's New in v2.0
+## What It Does
 
-Agent Orchestra has evolved into the **ultimate orchestration backbone** for any integration scenario:
+Agent Orchestra connects and orchestrates systems across different protocols - from legacy SOAP services to modern MCP servers - in a single unified framework.
 
-### 🔥 Major Enhancements
+### Key Capabilities
 
-- **🌐 Multi-Protocol Support**: Not just MCP anymore! Now supports REST, SOAP, GraphQL, WebSocket, and Lambda
-- **🏢 Domain System**: Build vertical-specific solutions (PropSync for property management included!)
-- **🔗 Integrated MCP Orchestrator**: Our MCP Orchestrator is now a built-in module
-- **🛠️ Protocol Bridges**: Seamlessly work across different API types
-- **📦 Backward Compatible**: All v0.1.0 features still work
+- **Multi-Protocol**: Connect MCP, REST, SOAP, GraphQL, WebSocket, and Lambda in one place
+- **Domain Templates**: Pre-built templates for specific industries (property management included)
+- **Cross-Protocol Workflows**: Chain operations across different API types
+- **Production Ready**: Built-in monitoring, error handling, and scaling
 
-## 🌟 Overview
+## 🎯 Use Cases
 
-Agent Orchestra v2.0 is a universal orchestration platform that enables you to:
-- **Orchestrate ANY System**: MCP servers, REST APIs, SOAP services, GraphQL endpoints, WebSockets, Lambda functions
-- **Build Domain Solutions**: Create industry-specific orchestrators (property management, healthcare, finance)
-- **Cross-Protocol Workflows**: Execute workflows that span multiple protocols
-- **Enterprise Ready**: Production-grade with observability, security, and scaling
-
-## 🎯 Why Agent Orchestra v2.0?
-
-**The Problem**: Modern enterprises use dozens of systems with different protocols:
+**Problem**: Enterprises use dozens of systems with different protocols:
 - Legacy SOAP APIs (PropertyWare, SAP)
 - Modern REST APIs (Stripe, Twilio)
 - MCP Servers (Airtable, Supabase)
 - Real-time WebSockets (Chat, IoT)
 - Serverless Functions (AWS Lambda)
 
-**The Solution**: Agent Orchestra unifies ALL of them under one orchestration platform!
+**Solution**: Agent Orchestra unifies them in one framework.
 
-## 🏗️ Architecture v2.0
+## 🏗️ Architecture
 
 ```mermaid
 graph TB
@@ -138,7 +128,7 @@ npm install
 npm run build
 ```
 
-### Basic Usage (v2.0)
+### Basic Usage
 
 ```typescript
 import { createOrchestraV2 } from '@agent-orchestra/core';
@@ -165,7 +155,7 @@ await orchestra.execute('soap', 'propertyware.GetPortfolios', { ... });
 await orchestra.execute('lambda', 'syncData', { source: 'PW', dest: 'SF' });
 ```
 
-## 💡 New Features in v2.0
+## 💡 Features
 
 ### 1. Protocol Bridges
 
@@ -362,19 +352,16 @@ export class HealthcareDomain implements Domain {
 orchestra.registerDomain(new HealthcareDomain());
 ```
 
-## 📊 Comparison: v0.1.0 vs v2.0
+## 📊 Supported Protocols
 
-| Feature | v0.1.0 | v2.0 |
-|---------|--------|------|
-| MCP Support | ✅ Basic | ✅ Full with Orchestrator |
-| REST APIs | ❌ | ✅ Complete |
-| SOAP/XML | ❌ | ✅ Complete |
-| GraphQL | ❌ | ✅ Complete |
-| WebSocket | ❌ | ✅ Complete |
-| Lambda | ❌ | ✅ Complete |
-| Domain System | ❌ | ✅ Extensible |
-| Cross-Protocol | ❌ | ✅ Full Support |
-| Property Management | ❌ | ✅ Template Included |
+| Protocol | Use Cases | Status |
+|----------|-----------|--------|
+| MCP | AI tools, modern integrations | ✅ Native Support |
+| REST | Most modern APIs | ✅ Ready |
+| SOAP | Legacy enterprise systems | ✅ Ready |
+| GraphQL | Modern query APIs | ✅ Ready |
+| WebSocket | Real-time, streaming | ✅ Ready |
+| Lambda | Serverless, custom logic | ✅ Ready |
 
 ## 🛠️ Development
 
@@ -428,13 +415,6 @@ npm run example:multi-protocol
 
 ## 🗺️ Roadmap
 
-### ✅ Completed (v2.0)
-- [x] Multi-protocol support (6 protocols)
-- [x] Domain plugin system
-- [x] Integrated MCP Orchestrator
-- [x] Property Management domain template
-- [x] Cross-protocol workflows
-
 ### 🚧 In Progress
 - [ ] Additional domains (Healthcare, Finance)
 - [ ] Visual workflow designer
@@ -473,16 +453,14 @@ MIT License - see [LICENSE](LICENSE) file for details
 - **Discussions**: [GitHub Discussions](https://github.com/rashidazarang/agent-orchestra/discussions)
 - **Twitter**: [@agentorchestra](https://twitter.com/agentorchestra)
 
-## 🏆 Why Choose Agent Orchestra v2.0?
+## 🏆 Why Agent Orchestra?
 
-1. **Universal Compatibility**: Works with ANY API or protocol
+1. **Universal Compatibility**: Works with any API or protocol
 2. **Domain Flexibility**: Build for any industry vertical
-3. **Production Ready**: Enterprise-grade from day one
+3. **Production Ready**: Enterprise-grade architecture
 4. **Open Source**: MIT licensed, community-driven
-5. **Future Proof**: Extensible architecture for new protocols
+5. **Extensible**: Add new protocols and domains easily
 
 ---
 
-**Built with ❤️ by Rashid Azarang and the Open Source Community**
-
-*Making universal orchestration accessible to everyone*
+**MIT Licensed** | Built by Rashid Azarang
