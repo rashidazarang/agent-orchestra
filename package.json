@@ -1,0 +1,82 @@
+{
+  "name": "@agent-orchestra/core",
+  "version": "0.1.0",
+  "description": "Universal Multi-Agent Orchestration Framework",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/**/*.ts",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docs": "typedoc src --out docs/api"
+  },
+  "keywords": [
+    "agent",
+    "orchestration",
+    "mcp",
+    "acp",
+    "a2a",
+    "multi-agent",
+    "ai",
+    "llm",
+    "workflow",
+    "automation"
+  ],
+  "author": "Rashid Azarang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rashidazarang/agent-orchestra.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rashidazarang/agent-orchestra/issues"
+  },
+  "homepage": "https://github.com/rashidazarang/agent-orchestra#readme",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.20.0",
+    "@opentelemetry/api": "^1.7.0",
+    "@opentelemetry/sdk-node": "^0.45.0",
+    "@rashidazarang/airtable-mcp": "^3.2.4",
+    "@supabase/supabase-js": "^2.39.0",
+    "bull": "^4.12.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "fastify": "^4.25.0",
+    "graphql": "^16.8.1",
+    "ioredis": "^5.3.2",
+    "js-yaml": "^4.1.0",
+    "jsonschema": "^1.4.1",
+    "pino": "^8.17.0",
+    "socket.io": "^4.6.0",
+    "uuid": "^9.0.1",
+    "winston": "^3.11.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/bull": "^4.10.0",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.11",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.10.0",
+    "@types/uuid": "^9.0.7",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.1.1",
+    "ts-jest": "^29.1.1",
+    "tsx": "^4.6.2",
+    "typedoc": "^0.25.4",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
