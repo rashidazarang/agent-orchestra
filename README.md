@@ -1,100 +1,125 @@
-# 🎭 Agent Orchestra
+# 🎭 Agent Orchestra v2.0
 
-> **Universal Multi-Agent Orchestration Framework**
+> **The Ultimate Multi-Protocol Orchestration Platform**
 
+[![Version](https://img.shields.io/badge/Version-2.0.0-brightgreen)](https://github.com/rashidazarang/agent-orchestra)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-blue)](https://modelcontextprotocol.io/)
-[![ACP Support](https://img.shields.io/badge/ACP-Supported-green)]()
-[![A2A Ready](https://img.shields.io/badge/A2A-Ready-purple)]()
+[![MCP Compatible](https://img.shields.io/badge/MCP-Integrated-blue)](https://modelcontextprotocol.io/)
+[![Multi-Protocol](https://img.shields.io/badge/Protocols-6+-orange)]()
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
-[![Python](https://img.shields.io/badge/Python-3.11-blue)](https://www.python.org/)
+[![Domain Ready](https://img.shields.io/badge/Domains-Extensible-purple)]()
+
+## 🚀 What's New in v2.0
+
+Agent Orchestra has evolved into the **ultimate orchestration backbone** for any integration scenario:
+
+### 🔥 Major Enhancements
+
+- **🌐 Multi-Protocol Support**: Not just MCP anymore! Now supports REST, SOAP, GraphQL, WebSocket, and Lambda
+- **🏢 Domain System**: Build vertical-specific solutions (PropSync for property management included!)
+- **🔗 Integrated MCP Orchestrator**: Our MCP Orchestrator is now a built-in module
+- **🛠️ Protocol Bridges**: Seamlessly work across different API types
+- **📦 Backward Compatible**: All v0.1.0 features still work
 
 ## 🌟 Overview
 
-Agent Orchestra is a production-ready, standards-based framework for orchestrating multiple AI agents across different protocols and data sources. It seamlessly integrates MCP (Model Context Protocol), ACP (Agent Communication Protocol), and A2A (Agent-to-Agent) standards to enable complex multi-agent workflows.
+Agent Orchestra v2.0 is a universal orchestration platform that enables you to:
+- **Orchestrate ANY System**: MCP servers, REST APIs, SOAP services, GraphQL endpoints, WebSockets, Lambda functions
+- **Build Domain Solutions**: Create industry-specific orchestrators (property management, healthcare, finance)
+- **Cross-Protocol Workflows**: Execute workflows that span multiple protocols
+- **Enterprise Ready**: Production-grade with observability, security, and scaling
 
-## 🎯 Key Features
+## 🎯 Why Agent Orchestra v2.0?
 
-- **🔌 Multi-Protocol Support** - MCP, ACP, A2A in a single framework
-- **🗄️ Multiple Data Layers** - Airtable, Supabase, PostgreSQL, and more via MCP
-- **🤖 Agent Registry** - Discover, register, and manage agents
-- **🔄 Orchestration Patterns** - Sequential, parallel, hierarchical, and collaborative workflows
-- **📊 Built-in Observability** - Traces, metrics, logs with OpenTelemetry
-- **🔒 Enterprise Security** - OAuth2, API keys, role-based access control
-- **⚡ High Performance** - Async/await, connection pooling, caching
-- **🎨 Visual Workflow Designer** - Drag-and-drop interface (coming soon)
+**The Problem**: Modern enterprises use dozens of systems with different protocols:
+- Legacy SOAP APIs (PropertyWare, SAP)
+- Modern REST APIs (Stripe, Twilio)
+- MCP Servers (Airtable, Supabase)
+- Real-time WebSockets (Chat, IoT)
+- Serverless Functions (AWS Lambda)
 
-## 🏗️ Architecture
+**The Solution**: Agent Orchestra unifies ALL of them under one orchestration platform!
+
+## 🏗️ Architecture v2.0
 
 ```mermaid
 graph TB
-    subgraph "Client Layer"
-        UI[Web UI]
-        CLI[CLI Tool]
-        API[REST/GraphQL API]
+    subgraph "Applications"
+        APP1[Claude Code]
+        APP2[Custom Apps]
+        APP3[PropSync]
     end
     
-    subgraph "Orchestration Core"
-        OE[Orchestration Engine]
-        AR[Agent Registry]
-        WM[Workflow Manager]
-        EM[Event Manager]
+    subgraph "Agent Orchestra v2.0"
+        CORE[Orchestration Core]
+        
+        subgraph "Protocol Bridges"
+            MCP[MCP Bridge<br/>with MCP Orchestrator]
+            REST[REST Bridge]
+            SOAP[SOAP Bridge]
+            GQL[GraphQL Bridge]
+            WS[WebSocket Bridge]
+            LAMBDA[Lambda Bridge]
+        end
+        
+        subgraph "Domain Plugins"
+            PM[Property Management]
+            HC[Healthcare]
+            FIN[Finance]
+        end
     end
     
-    subgraph "Protocol Bridges"
-        MCP[MCP Gateway]
-        ACP[ACP Bridge]
-        A2A[A2A Translator]
+    subgraph "External Systems"
+        subgraph "MCP Servers"
+            AIR[Airtable MCP]
+            SUPA[Supabase MCP]
+        end
+        
+        subgraph "APIs"
+            PW[PropertyWare SOAP]
+            SF[ServiceFusion REST]
+            STRIPE[Stripe REST]
+        end
+        
+        subgraph "Real-time"
+            SLACK[Slack WebSocket]
+            IOT[IoT Streams]
+        end
+        
+        subgraph "Serverless"
+            AWS[AWS Lambda]
+            SYNC[GreenLight Sync]
+        end
     end
     
-    subgraph "Data Sources (MCP)"
-        AT[Airtable MCP]
-        SB[Supabase MCP]
-        PG[PostgreSQL MCP]
-        MORE[Other MCP Servers]
-    end
+    APP1 --> CORE
+    APP2 --> CORE
+    APP3 --> CORE
     
-    subgraph "Agents"
-        AA[Airtable Agent]
-        DA[Data Analyst Agent]
-        CA[Custom Agents]
-    end
+    CORE --> MCP
+    CORE --> REST
+    CORE --> SOAP
+    CORE --> GQL
+    CORE --> WS
+    CORE --> LAMBDA
     
-    subgraph "Observability"
-        TR[Traces]
-        MT[Metrics]
-        LG[Logs]
-    end
+    MCP --> AIR
+    MCP --> SUPA
+    REST --> SF
+    REST --> STRIPE
+    SOAP --> PW
+    WS --> SLACK
+    WS --> IOT
+    LAMBDA --> AWS
+    LAMBDA --> SYNC
     
-    UI --> OE
-    CLI --> OE
-    API --> OE
+    PM --> CORE
+    HC --> CORE
+    FIN --> CORE
     
-    OE --> AR
-    OE --> WM
-    OE --> EM
-    
-    WM --> MCP
-    WM --> ACP
-    WM --> A2A
-    
-    MCP --> AT
-    MCP --> SB
-    MCP --> PG
-    MCP --> MORE
-    
-    ACP --> AA
-    ACP --> DA
-    ACP --> CA
-    
-    EM --> TR
-    EM --> MT
-    EM --> LG
-    
-    style OE fill:#e1f5fe
+    style CORE fill:#e1f5fe
     style MCP fill:#fff3e0
-    style ACP fill:#f3e5f5
-    style TR fill:#e8f5e8
+    style PM fill:#f3e5f5
 ```
 
 ## 🚀 Quick Start
@@ -108,332 +133,329 @@ cd agent-orchestra
 
 # Install dependencies
 npm install
-pip install -r requirements.txt
 
-# Configure environment
-cp .env.example .env
-# Edit .env with your credentials
-
-# Start the orchestrator
-npm run start
+# Build
+npm run build
 ```
 
-### Docker Deployment
-
-```bash
-# Start all services
-docker-compose up -d
-
-# Check status
-docker-compose ps
-
-# View logs
-docker-compose logs -f orchestrator
-```
-
-## 💡 Usage Examples
-
-### Example 1: Simple Sequential Workflow
+### Basic Usage (v2.0)
 
 ```typescript
-import { Orchestra } from '@agent-orchestra/core';
+import { createOrchestraV2 } from '@agent-orchestra/core';
 
-const orchestra = new Orchestra();
-
-// Define workflow
-const workflow = orchestra.createWorkflow({
-  name: 'data-processing',
-  pattern: 'sequential'
-});
-
-// Add steps
-workflow
-  .addStep('fetch-data', {
-    agent: 'airtable-agent',
-    action: 'list_records',
-    params: { table: 'Projects' }
-  })
-  .addStep('analyze', {
-    agent: 'analyst-agent',
-    action: 'analyze_data',
-    input: '{{fetch-data.output}}'
-  })
-  .addStep('store-results', {
-    agent: 'supabase-agent',
-    action: 'insert',
-    params: { 
-      table: 'analytics',
-      data: '{{analyze.output}}'
-    }
-  });
-
-// Execute
-const result = await workflow.execute();
-```
-
-### Example 2: Parallel Multi-Agent Collaboration
-
-```python
-from agent_orchestra import Orchestra, ParallelWorkflow
-
-orchestra = Orchestra()
-
-# Create parallel workflow
-workflow = ParallelWorkflow("multi-source-aggregation")
-
-# Add parallel tasks
-workflow.add_parallel_tasks([
-    {
-        "agent": "airtable-agent",
-        "action": "fetch_sales_data",
-        "params": {"table": "Sales", "view": "This Month"}
-    },
-    {
-        "agent": "supabase-agent", 
-        "action": "fetch_inventory",
-        "params": {"query": "SELECT * FROM inventory WHERE stock < 100"}
-    },
-    {
-        "agent": "analytics-agent",
-        "action": "fetch_market_trends",
-        "params": {"source": "external_api"}
-    }
-])
-
-# Add aggregation step
-workflow.add_aggregation_step({
-    "agent": "orchestrator",
-    "action": "combine_insights",
-    "wait_for": "all"
-})
-
-# Execute and get results
-results = await orchestra.execute(workflow)
-```
-
-### Example 3: Hierarchical Agent Management
-
-```typescript
-// Create supervisor agent
-const supervisor = orchestra.createSupervisor({
-  name: 'project-manager',
-  capabilities: ['task-delegation', 'progress-monitoring']
-});
-
-// Register sub-agents
-supervisor.registerSubAgent('researcher', researchAgent);
-supervisor.registerSubAgent('writer', writerAgent);
-supervisor.registerSubAgent('reviewer', reviewAgent);
-
-// Define complex task
-const task = {
-  goal: 'Create comprehensive market analysis report',
-  deadline: '2025-01-15',
-  requirements: ['data-collection', 'analysis', 'visualization', 'report-writing']
-};
-
-// Let supervisor orchestrate
-const report = await supervisor.executeTask(task);
-```
-
-## 🔧 Configuration
-
-### MCP Servers Configuration
-
-```yaml
-# config/mcp-servers.yaml
-servers:
-  airtable:
-    package: "@rashidazarang/airtable-mcp"
-    version: "3.2.4"
-    config:
-      auth: "${AIRTABLE_TOKEN}"
-      base: "${AIRTABLE_BASE_ID}"
-    
-  supabase:
-    package: "@supabase/mcp-server"
-    version: "1.0.0"
-    config:
-      url: "${SUPABASE_URL}"
-      key: "${SUPABASE_KEY}"
-      
-  postgres:
-    package: "@mcp/postgres"
-    version: "2.0.0"
-    config:
-      connection: "${DATABASE_URL}"
-      
-  custom:
-    path: "./custom-mcp-servers"
-    config:
-      custom_param: "value"
-```
-
-### Agent Registry
-
-```yaml
-# config/agents.yaml
-agents:
-  airtable-ai-agent:
-    type: "mcp-client"
-    server: "airtable"
-    capabilities:
-      - data-manipulation
-      - schema-management
-      - webhook-handling
-    
-  data-analyst:
-    type: "reasoning"
-    model: "gpt-4"
-    tools:
-      - statistical-analysis
-      - visualization
-      - reporting
-      
-  orchestrator:
-    type: "supervisor"
-    capabilities:
-      - task-planning
-      - agent-coordination
-      - error-recovery
-```
-
-## 📊 Observability
-
-### Built-in Dashboards
-
-- **Agent Performance** - Response times, success rates, token usage
-- **Workflow Analytics** - Execution paths, bottlenecks, optimization suggestions
-- **System Health** - Resource usage, error rates, availability
-
-### Metrics Export
-
-```typescript
-// Export to Prometheus
-orchestra.metrics.exportTo('prometheus', {
-  endpoint: 'http://localhost:9090',
-  interval: 30000
-});
-
-// Export to DataDog
-orchestra.metrics.exportTo('datadog', {
-  apiKey: process.env.DATADOG_API_KEY,
-  site: 'datadoghq.com'
-});
-```
-
-## 🛠️ Advanced Features
-
-### Custom Orchestration Patterns
-
-```typescript
-// Define custom pattern
-orchestra.registerPattern('round-robin', {
-  selector: (agents, task) => {
-    // Custom logic for agent selection
-    return agents[task.attempt % agents.length];
-  },
-  errorHandler: (error, context) => {
-    // Custom error recovery
-    return context.retry({ maxAttempts: 3 });
+// Create orchestra with multiple protocols
+const orchestra = await createOrchestraV2({
+  protocols: {
+    mcp: true,      // MCP servers (Airtable, Supabase, etc.)
+    rest: true,     // REST APIs
+    soap: true,     // SOAP/XML services
+    graphql: true,  // GraphQL endpoints
+    websocket: true,// Real-time connections
+    lambda: true    // Serverless functions
   }
 });
+
+// Initialize
+await orchestra.initialize();
+
+// Execute across any protocol!
+await orchestra.execute('mcp', 'airtable.list_records', { table: 'Projects' });
+await orchestra.execute('rest', 'stripe.get./v1/customers', { limit: 10 });
+await orchestra.execute('soap', 'propertyware.GetPortfolios', { ... });
+await orchestra.execute('lambda', 'syncData', { source: 'PW', dest: 'SF' });
 ```
 
-### Protocol Bridges
+## 💡 New Features in v2.0
+
+### 1. Protocol Bridges
 
 ```typescript
-// Bridge MCP to ACP
-const bridge = orchestra.createBridge('mcp-to-acp');
-bridge.translate({
-  from: 'mcp-tool-call',
-  to: 'acp-agent-message',
-  transformer: (mcpData) => ({
-    type: 'task',
-    payload: mcpData.params,
-    sender: 'mcp-gateway',
-    timestamp: Date.now()
-  })
+// Add any MCP server
+await orchestra.addMCPServer({
+  name: 'airtable',
+  package: '@rashidazarang/airtable-mcp'
+});
+
+// Add REST endpoint
+orchestra.addRESTEndpoint({
+  name: 'stripe',
+  baseURL: 'https://api.stripe.com',
+  auth: { type: 'bearer', credentials: { token: process.env.STRIPE_KEY } }
+});
+
+// Add SOAP service
+orchestra.addSOAPService({
+  name: 'propertyware',
+  wsdl: 'https://api.propertyware.com/wsdl',
+  auth: { type: 'oauth2', ... }
+});
+
+// Add Lambda function
+orchestra.addLambdaFunction({
+  name: 'greenlight-sync',
+  handler: async (event) => { /* Your sync logic */ }
 });
 ```
 
-## 📦 Modules
+### 2. Domain System
+
+Build vertical-specific solutions with the domain plugin system:
+
+```typescript
+import { PropertyManagementDomain } from '@agent-orchestra/domains';
+
+// Register a domain
+orchestra.registerDomain(new PropertyManagementDomain());
+
+// Use domain-specific workflows
+await orchestra.executeWorkflow('emergency-maintenance', {
+  workOrderId: 'WO-123',
+  priority: 'urgent'
+});
+
+await orchestra.executeWorkflow('monthly-reconciliation', {
+  portfolio: 'Anderson',
+  month: '2024-01'
+});
+```
+
+### 3. Cross-Protocol Workflows
+
+```typescript
+// Define workflows that span multiple protocols
+const workflow = {
+  name: 'data-sync',
+  steps: [
+    { protocol: 'soap', operation: 'propertyware.GetWorkOrders' },
+    { protocol: 'lambda', operation: 'transform-data' },
+    { protocol: 'rest', operation: 'servicefusion.createJobs' },
+    { protocol: 'mcp', operation: 'airtable.update_records' },
+    { protocol: 'websocket', operation: 'notify-clients' }
+  ]
+};
+
+await orchestra.executeWorkflow(workflow);
+```
+
+### 4. Integrated MCP Orchestrator
+
+Our MCP Orchestrator is now built-in as a module:
+
+```typescript
+// All MCP servers managed through one interface
+const mcpTools = await orchestra.listMCPTools();
+// Returns tools from ALL connected MCP servers
+
+// Smart routing across MCP servers
+await orchestra.execute('mcp', 'sync_databases', {
+  source: 'airtable',
+  destination: 'supabase'
+});
+```
+
+## 🏢 Domain Examples
+
+### Property Management (PropSync Template)
+
+```typescript
+// Create PropSync-ready orchestra
+const propSync = await createPropSyncOrchestra();
+
+// Pre-configured with:
+// - PropertyWare (SOAP + MCP)
+// - ServiceFusion (REST + MCP)
+// - GreenLight Sync (Lambda)
+// - Supabase (REST + MCP)
+
+// Execute property management workflows
+await propSync.executeWorkflow('emergency-maintenance');
+await propSync.executeWorkflow('tenant-move-in');
+await propSync.executeWorkflow('monthly-reconciliation');
+```
+
+## 📦 What's Included
 
 ### Core Modules
+- **Orchestration Engine** - Core workflow execution
+- **Protocol Bridges** - Connect to any API type
+- **Domain System** - Build vertical solutions
+- **Agent Registry** - Manage agents across protocols
+- **Workflow Engine** - Complex workflow patterns
+- **Observability** - Monitoring and logging
 
-- **orchestrator** - Core orchestration engine
-- **mcp-gateway** - MCP server management
-- **acp-bridge** - ACP protocol support
-- **a2a-translator** - Cross-framework translation
-- **agent-registry** - Agent discovery and management
-- **workflow-engine** - Workflow execution
-- **observability** - Monitoring and logging
+### Protocol Support
+| Protocol | Use Cases | Status |
+|----------|-----------|---------|
+| MCP | AI tools, modern integrations | ✅ Integrated |
+| REST | Most modern APIs | ✅ Ready |
+| SOAP | Legacy enterprise systems | ✅ Ready |
+| GraphQL | Modern query APIs | ✅ Ready |
+| WebSocket | Real-time, streaming | ✅ Ready |
+| Lambda | Serverless, custom logic | ✅ Ready |
 
-### Extension Modules
+### Included Domains
+- **Property Management** - Complete template for PropSync
+- More domains coming soon!
 
-- **visual-designer** - Drag-and-drop workflow builder
-- **marketplace** - Agent and workflow marketplace
-- **security** - Enhanced security features
-- **analytics** - Advanced analytics and insights
+## 🔧 Advanced Configuration
+
+### Multi-Protocol Setup
+
+```yaml
+# orchestra.config.yml
+protocols:
+  mcp:
+    servers:
+      - name: airtable
+        package: "@rashidazarang/airtable-mcp"
+      - name: supabase
+        package: "@supabase/mcp-server"
+  
+  rest:
+    endpoints:
+      - name: stripe
+        baseURL: https://api.stripe.com
+      - name: twilio
+        baseURL: https://api.twilio.com
+  
+  soap:
+    services:
+      - name: propertyware
+        wsdl: https://api.propertyware.com/wsdl
+  
+  lambda:
+    functions:
+      - name: sync-engine
+        runtime: nodejs18
+        handler: sync.handler
+
+domains:
+  - property-management
+  - healthcare
+  - finance
+```
+
+## 🤝 Building Your Own Domain
+
+```typescript
+import { Domain } from '@agent-orchestra/core';
+
+export class HealthcareDomain implements Domain {
+  name = 'healthcare';
+  version = '1.0.0';
+  
+  getWorkflows() {
+    return [
+      {
+        id: 'patient-admission',
+        steps: [
+          { protocol: 'rest', operation: 'epic.createPatient' },
+          { protocol: 'mcp', operation: 'insurance.verify' },
+          { protocol: 'soap', operation: 'legacy.updateRecords' }
+        ]
+      }
+    ];
+  }
+}
+
+// Register your domain
+orchestra.registerDomain(new HealthcareDomain());
+```
+
+## 📊 Comparison: v0.1.0 vs v2.0
+
+| Feature | v0.1.0 | v2.0 |
+|---------|--------|------|
+| MCP Support | ✅ Basic | ✅ Full with Orchestrator |
+| REST APIs | ❌ | ✅ Complete |
+| SOAP/XML | ❌ | ✅ Complete |
+| GraphQL | ❌ | ✅ Complete |
+| WebSocket | ❌ | ✅ Complete |
+| Lambda | ❌ | ✅ Complete |
+| Domain System | ❌ | ✅ Extensible |
+| Cross-Protocol | ❌ | ✅ Full Support |
+| Property Management | ❌ | ✅ Template Included |
+
+## 🛠️ Development
+
+### Testing
+```bash
+npm test
+```
+
+### Building
+```bash
+npm run build
+```
+
+### Running Examples
+```bash
+# Basic orchestration
+npm run example:basic
+
+# Property management
+npm run example:propsync
+
+# Multi-protocol
+npm run example:multi-protocol
+```
+
+## 📚 Documentation
+
+- [Getting Started](docs/getting-started.md)
+- [Architecture Overview](docs/architecture.md)
+- [Protocol Bridges](docs/protocols.md)
+- [Domain System](docs/domains.md)
+- [API Reference](docs/api-reference.md)
+- [Migration from v0.1.0](docs/migration.md)
+
+## 🎯 Use Cases
+
+### For Enterprises
+- **System Integration**: Unite legacy SOAP with modern REST/GraphQL
+- **Process Automation**: Orchestrate workflows across all systems
+- **Data Synchronization**: Keep multiple systems in sync
+
+### For Developers
+- **Multi-Protocol APIs**: Build APIs that aggregate multiple sources
+- **Workflow Automation**: Create complex cross-system workflows
+- **Domain Solutions**: Build vertical-specific platforms
+
+### For Specific Industries
+- **Property Management**: PropSync template ready to use
+- **Healthcare**: Connect EHR, billing, insurance systems
+- **Finance**: Integrate banking, payment, accounting systems
+
+## 🗺️ Roadmap
+
+### ✅ Completed (v2.0)
+- [x] Multi-protocol support (6 protocols)
+- [x] Domain plugin system
+- [x] Integrated MCP Orchestrator
+- [x] Property Management domain template
+- [x] Cross-protocol workflows
+
+### 🚧 In Progress
+- [ ] Additional domains (Healthcare, Finance)
+- [ ] Visual workflow designer
+- [ ] Cloud deployment templates
+- [ ] SDK for domain creation
+
+### 📋 Planned
+- [ ] AI-powered workflow generation
+- [ ] Automatic protocol detection
+- [ ] Distributed execution
+- [ ] Enterprise authentication (SSO, SAML)
 
 ## 🤝 Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-### Development Setup
-
-```bash
-# Clone repository
-git clone https://github.com/rashidazarang/agent-orchestra.git
-cd agent-orchestra
-
-# Install development dependencies
-npm install --dev
-pip install -r requirements-dev.txt
-
-# Run tests
-npm test
-pytest tests/
-
-# Run linting
-npm run lint
-python -m flake8 src/
-```
-
-## 📚 Documentation
-
-- [Getting Started Guide](docs/getting-started.md)
-- [Architecture Overview](docs/architecture.md)
-- [API Reference](docs/api-reference.md)
-- [Orchestration Patterns](docs/patterns.md)
-- [Protocol Specifications](docs/protocols.md)
-- [Examples](examples/)
-
-## 🎯 Roadmap
-
-### Phase 1: Foundation (Q1 2025) ✅
-- [x] Core orchestration engine
-- [x] MCP gateway with multiple servers
-- [x] Basic agent registry
-- [x] Sequential and parallel patterns
-
-### Phase 2: Advanced Features (Q2 2025) 🚧
-- [ ] ACP bridge implementation
-- [ ] A2A translator
-- [ ] Hierarchical orchestration
-- [ ] Visual workflow designer
-
-### Phase 3: Enterprise (Q3 2025) 📋
-- [ ] Advanced security features
-- [ ] Marketplace integration
-- [ ] Custom protocol support
-- [ ] Cloud-native deployment
-
-### Phase 4: AI-Native (Q4 2025) 🔮
-- [ ] Self-optimizing workflows
-- [ ] Automatic agent discovery
-- [ ] Predictive orchestration
-- [ ] Natural language workflow definition
+### How to Contribute
+1. Fork the repository
+2. Create your feature branch
+3. Add your protocol bridge or domain
+4. Submit a pull request
 
 ## 📄 License
 
@@ -442,19 +464,25 @@ MIT License - see [LICENSE](LICENSE) file for details
 ## 🙏 Acknowledgments
 
 - Built on [Model Context Protocol](https://modelcontextprotocol.io/) by Anthropic
-- Inspired by [LangGraph](https://langchain-ai.github.io/langgraph/) and [CrewAI](https://crewai.com/)
-- Uses [@rashidazarang/airtable-mcp](https://github.com/rashidazarang/airtable-mcp) for Airtable integration
+- Inspired by enterprise integration patterns
 - Community contributions and feedback
 
 ## 📞 Support
 
 - **Issues**: [GitHub Issues](https://github.com/rashidazarang/agent-orchestra/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/rashidazarang/agent-orchestra/discussions)
-- **Discord**: [Join our Discord](https://discord.gg/agent-orchestra)
-- **Twitter**: [@agenторchestra](https://twitter.com/agentorchestra)
+- **Twitter**: [@agentorchestra](https://twitter.com/agentorchestra)
+
+## 🏆 Why Choose Agent Orchestra v2.0?
+
+1. **Universal Compatibility**: Works with ANY API or protocol
+2. **Domain Flexibility**: Build for any industry vertical
+3. **Production Ready**: Enterprise-grade from day one
+4. **Open Source**: MIT licensed, community-driven
+5. **Future Proof**: Extensible architecture for new protocols
 
 ---
 
-**Built with ❤️ by Rashid Azarang**
+**Built with ❤️ by Rashid Azarang and the Open Source Community**
 
-*Making multi-agent orchestration accessible to everyone*
+*Making universal orchestration accessible to everyone*
